@@ -1,0 +1,13 @@
+#page{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.opaque{
+  background: rgba(250, 250, 250, .6);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}

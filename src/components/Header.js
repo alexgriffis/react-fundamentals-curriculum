@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import SearchContainer from '../containers/SearchContainer'
 import '../styles/header.css'
 
 class Header extends Component {
@@ -6,7 +7,7 @@ class Header extends Component {
     return (
       <div id='head'>
         <h1>Clever Title that Reflects Location</h1>
-        <div>This is where the search box goes goes</div>
+        <SearchContainer />
       </div>
     )
   }

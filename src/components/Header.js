@@ -1,20 +1,14 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import SearchContainer from '../containers/SearchContainer'
 import '../styles/header.css'
 
-class Header extends Component {
-  render () {
-    return (
-      <div id='head'>
-        <h1>Clever Title that Reflects Location</h1>
-        <SearchContainer />
-      </div>
-    )
-  }
-}
-
-Header.propTypes = {
-
+const Header = () => {
+  return (
+    <div id='head'>
+      <h1>This Is The Weather App</h1>
+      <SearchContainer />
+    </div>
+  )
 }
 
 export default Header

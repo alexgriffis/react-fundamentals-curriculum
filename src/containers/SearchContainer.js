@@ -2,11 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import Search from '../components/Search'
 
 class SearchContainer extends Component {
-  constructor (/* props */) {
-    super()
+  constructor (props, context) {
+    super(props)
     this.state = {
       location: ''
     }
+    this.router = context.router
     this.handleUpdateLocation = this.handleUpdateLocation.bind(this)
     this.handleSubmitLocation = this.handleSubmitLocation.bind(this)
   }
@@ -20,10 +21,7 @@ class SearchContainer extends Component {
   handleSubmitLocation (e) {
     e.preventDefault()
     let location = this.state.location
-    // this.setState({
-    //   location: ''
-    // })
-    this.context.router.push('/forcast/' + location)
+    this.router.push('/forecast/' + location)
   }
 
   render () {
@@ -40,4 +38,7 @@ SearchContainer.propTypes = {
 
 }
 
+SearchContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired
+}
 export default SearchContainer

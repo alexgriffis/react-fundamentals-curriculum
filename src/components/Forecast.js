@@ -1,8 +1,16 @@
 import React, { PropTypes } from 'react'
+import DetailContainer from '../containers/DetailContainer'
+import '../styles/forecast.css'
 
 const Forecast = props => {
   return (
-    <div>{JSON.stringify(props.forecastInfo)}</div>
+    <div className='flex-row-scroll'>
+      {props.forecastInfo.map(elm => {
+        return (
+          <DetailContainer time={elm.time} elm={elm} key={elm.time} />
+        )
+      })}
+    </div>
   )
 }
 

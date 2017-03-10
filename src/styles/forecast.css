@@ -1,0 +1,28 @@
+p { 
+    font-size: 30px;
+    color: #333;
+    font-weight: 100;
+    margin: 0;
+}
+
+img{
+  height: 100px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+.flex-items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.flex-row-scroll {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  overflow-x: scroll;
+}

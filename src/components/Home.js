@@ -4,12 +4,12 @@ import SearchContainer from '../containers/SearchContainer'
 
 const Home = () => {
   return (
-    <div id='page'>
-      <div className='opaque'>
+    <div id='page' >
+      <div className='opaque round-padding'>
         <h1> Enter A Location </h1>
         <SearchContainer />
       </div>
-    </div>
+    </div >
   )
 }
 

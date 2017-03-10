@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import moment from 'moment'
 // Add openWeather api key
 const id = 'e709e779bd37e4d570d719da142459c4'
 
@@ -10,7 +10,7 @@ function getForecast (location) {
     .then(result => {
       return result.data.list.map((elm) => {
         return {
-          time: elm.dt_txt,
+          time: moment(elm.dt_txt),
           weather: elm.weather[0].main,
           max: elm.main.temp_max,
           min: elm.main.temp_min,

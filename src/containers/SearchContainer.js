@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Search from '../components/Search'
 
 class SearchContainer extends Component {
@@ -34,11 +34,8 @@ class SearchContainer extends Component {
   }
 }
 
-SearchContainer.propTypes = {
-
-}
-
 SearchContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
+
 export default SearchContainer

@@ -3,8 +3,8 @@ import openWeatherHelpers from '../utils/openWeatherHelpers'
 import Forecast from '../components/Forecast'
 
 class ForcastContainer extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       isLoading: true,
       forecastInfo: []
@@ -22,9 +22,11 @@ class ForcastContainer extends Component {
   }
   render () {
     return (
-      <Forecast
-        forecastInfo={this.state.forecastInfo}
-        isLoading={this.state.isLoading} />
+      <div id='page'>
+        <Forecast
+          forecastInfo={this.state.forecastInfo}
+          isLoading={this.state.isLoading} />
+      </div>
     )
   }
 }

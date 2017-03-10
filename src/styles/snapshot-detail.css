@@ -4,3 +4,7 @@
 .clickable:hover {
   background: rgba(250,250,250,.8)
 }
+
+.under{
+  text-decoration: underline;
+}

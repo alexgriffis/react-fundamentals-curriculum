@@ -11,8 +11,12 @@ class DetailContainer extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  componentDidMount () {
+    const scroller = document.getElementById('scroller')
+    scroller.addEventListener('mousewheel', (e) => scroller.scrollLeft += e.deltaY / 5)
+  }
+
   handleClick () {
-    console.log('ccc')
     this.setState({ expanded: !this.state.expanded })
   }
 

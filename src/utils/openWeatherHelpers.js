@@ -9,11 +9,13 @@ function getForecast (location) {
   return getForecastData(location)
     .then(result => {
       return result.data.list.map((elm) => {
+        const max = Math.round((9 / 5 * (elm.main.temp_max - 273.15) + 32)) + '°F'
+        const min = Math.round((9 / 5 * (elm.main.temp_min - 273.15) + 32)) + '°F'
         return {
           time: moment(elm.dt_txt),
           weather: elm.weather[0].main,
-          max: elm.main.temp_max,
-          min: elm.main.temp_min,
+          max,
+          min,
           ico: elm.weather[0].icon,
           hum: elm.main.humidity
         }

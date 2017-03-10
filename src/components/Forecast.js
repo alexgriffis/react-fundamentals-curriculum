@@ -4,7 +4,7 @@ import '../styles/forecast.css'
 
 const Forecast = props => {
   return (
-    <div className='flex-row-scroll'>
+    <div id='scroller' className='flex-row-scroll'>
       {props.forecastInfo.map(elm => {
         return (
           <DetailContainer time={elm.time} elm={elm} key={elm.time} />
@@ -13,9 +13,9 @@ const Forecast = props => {
     </div>
   )
 }
-
 Forecast.propTyeps = {
   isLoading: PropTypes.bool.isRequired,
   forecastInfo: PropTypes.object.isRequired
 }
+
 export default Forecast

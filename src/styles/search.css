@@ -1,0 +1,18 @@
+input, button {
+  line-height: 30px;
+  padding: 4px;
+  font-size: 16px;
+  text-align: center;
+}
+button{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+button:hover{
+  background-color: #4ba74b;
+}
+.form-group {
+  display: inline-flex;
+  padding: 4px
+}

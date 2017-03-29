@@ -3,33 +3,28 @@ import Snapshot from '../components/Snapshot'
 import Detail from '../components/Detail'
 
 class DetailContainer extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      expanded: false
-    }
-    this.handleClick = this.handleClick.bind(this)
+  state = {
+    expanded: false
+  };
+
+  static propTypes = {
+    time: PropTypes.object.isRequired,
+    elm: PropTypes.object.isRequired
   }
 
-  componentDidMount () {
+  // refactor eventlistener into  parent?
+  componentDidMount() {
     const scroller = document.getElementById('scroller')
     scroller.addEventListener('mousewheel', (e) => scroller.scrollLeft += e.deltaY / 5)
   }
 
-  handleClick () {
-    this.setState({ expanded: !this.state.expanded })
-  }
+  handleToggle = () => this.setState({ expanded: !this.state.expanded })
 
-  render () {
+  render() {
     return this.state.expanded === true
-      ? <Detail onToggle={this.handleClick} time={this.props.time} elm={this.props.elm} />
-      : <Snapshot onToggle={this.handleClick} time={this.props.time} elm={this.props.elm} />
+      ? <Detail onToggle={this.handleToggle} {...this.props} />
+      : <Snapshot onToggle={this.handleToggle} {...this.props} />
   }
-}
-
-DetailContainer.propTypes = {
-  time: PropTypes.object.isRequired,
-  elm: PropTypes.object.isRequired
 }
 
 export default DetailContainer
